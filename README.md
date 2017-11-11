@@ -35,7 +35,7 @@ In src
    - `store_test.go`    unit tests for main program
    note that the tests require AWS keys to be available to connect to
    a AWS parameter store
-   - _kvtextdata.txt
+   - `_kvtextdata.txt`
 
 ## How to compile to a static binary
 
