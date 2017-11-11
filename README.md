@@ -25,14 +25,14 @@ See below for static compiler details
 
 In Scripts
 
-   - deletewithcli.bash  shell script to delete from store
-   - loader.go   loads key/values from flat files
-   - template.go  fills in templates
-   - kvtest.templ  example template
+   - `deletewithcli.bash`  shell script to delete from store
+   - `loader.go`   loads key/values from flat files
+   - `template.go`  fills in templates
+   - `kvtest.templ`  example template
 
 In src
-   - sfill.go    main program
-   - store_test.go    unit tests for main program
+   - `sfill.go`    main program
+   - `store_test.go`    unit tests for main program
    note that the tests require AWS keys to be available to connect to
    a AWS parameter store
    - _kvtextdata.txt
@@ -40,11 +40,11 @@ In src
 ## How to compile to a static binary
 
 To compile a static binary, I used this command line for the template program
-CGO_ENABLED=0 GOOS=linux go build -o template -a -ldflags '-extldflags "-static"' template.go
+`CGO_ENABLED=0 GOOS=linux go build -o template -a -ldflags '-extldflags "-static"' template.go`
 
 ## How to install the aws dependencies
 change into the src/sfill directory and issue this command
-    go get ./...
+    `go get ./...`
 
 ## How to restrict access to a particular key set 
 The policy below can be attached to a user or role to allow access all
