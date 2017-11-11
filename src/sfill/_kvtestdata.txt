@@ -1,0 +1,5 @@
+front/host_url http://www.linuxufo.org/
+back/db_server_dsn dbi:Oracle:port=1521;host=db.google.com;sid=customer
+back/db_user
+back/db_passwd xyz!123
+front/welcome welcome to the xyz system
