@@ -121,7 +121,7 @@ func (p Para) Loader(kv []string, base string) {
 			_, err := p.s.PutParameter(&ssm.PutParameterInput{Name: aws.String(k), Overwrite: &ov, Type: &t, Value: aws.String(v)})
 			//fmt.Printf(">> %s -> %s <<",k,v)
 			if err != nil {
-				fmt.Print("put parameter %s -> %s %v", k, v, err)
+				fmt.Printf("put parameter %s -> %s %v", k, v, err)
 			}
 		}
 	}

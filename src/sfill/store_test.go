@@ -8,10 +8,10 @@ func TestGet(t *testing.T) {
 	me.setup()
 	mymap := me.Getpath(testpath)
 	if mymap["bbb"] == "" {
-		t.Errorf("cannot see example, result is ", mymap)
+		t.Errorf("cannot see example, result is %s", mymap)
 	}
 	if len(mymap) != 2 {
-		t.Errorf("wrong number of values found, expected 2, was ", len(mymap))
+		t.Errorf("wrong number of values found, expected 2, was %d", len(mymap))
 	}
 
 }
@@ -20,7 +20,7 @@ func TestReadFile(t *testing.T) {
 	testpath := "_kvtestdata.txt"
 	strs := Readflatfile(testpath)
 	if len(strs) != 5 {
-		t.Errorf("wrong number of values found, expected 5, was ", len(strs))
+		t.Errorf("wrong number of values found, expected 5, was %d", len(strs))
 	}
 
 }
@@ -39,11 +39,11 @@ func TestCRUD(t *testing.T) {
 	mymap := me.Getpath(base)
 	// first k/v
 	if mymap["global/example/zzz/fish"] != "fingers" {
-		t.Errorf("no fish fingers found ", mymap)
+		t.Error("no fish fingers found ", mymap)
 	}
 	// k/v with spaces
 	if mymap["global/example/zzz/msg"] != "salt and vinegar" {
-		t.Errorf("no salt and vinegar found ", mymap)
+		t.Error("no salt and vinegar found ", mymap)
 	}
 
 	// update
@@ -51,7 +51,7 @@ func TestCRUD(t *testing.T) {
 	me.Loader(updateline, base)
 	mymap3 := me.Getpath(base)
 	if mymap3["global/example/zzz/fish"] != "narwal" {
-		t.Errorf("lack of narwal update detected", mymap3)
+		t.Error("lack of narwal update detected", mymap3)
 	}
 	// delete test
 	me.Delete(base + "/global/example/zzz/fish")
@@ -59,7 +59,7 @@ func TestCRUD(t *testing.T) {
 	me.Delete(base + "/global/example/zzz/msg")
 	mymap2 := me.Getpath(base)
 	if mymap2["global/example/zzz/fish"] == "narwal" {
-		t.Errorf("old narwal found ", mymap2)
+		t.Error("old narwal found ", mymap2)
 	}
 
 }
