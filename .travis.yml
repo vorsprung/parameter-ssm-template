@@ -3,4 +3,5 @@ language: go
 go:
     - 1.9
 script:
+ - go build github.com/vorsprung/sfill
  - go test github.com/vorsprung/sfill
