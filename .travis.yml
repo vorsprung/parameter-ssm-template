@@ -1,6 +1,6 @@
-
 language: go
 go:
     - 1.9
 script:
+ - find . -name sfill.go
  - make test
