@@ -28,5 +28,5 @@ $(PLATFORMS):
 
 test:
 	go get ./...
-	go test sfill
+	go test github.com/vorsprung/sfill
 
