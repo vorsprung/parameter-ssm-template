@@ -23,7 +23,7 @@ type Para struct {
 	s *ssm.SSM
 }
 
-func attach() Para {
+func Attach() Para {
 	me := Para{}
 	me.setup()
 	return me

@@ -26,10 +26,8 @@ See below for static compiler details
 
 In Scripts
 
-   - `deletewithcli.bash`  shell script to delete from store
    - `loader.go`   loads key/values from flat files
    - `template.go`  fills in templates
-   - `kvtest.templ`  example template
 
 In src
    - `sfill.go`    main program
