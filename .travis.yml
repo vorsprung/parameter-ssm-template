@@ -3,6 +3,4 @@ language: go
 go:
     - 1.9
 script:
- - ls -lR
- - go build github.com/vorsprung/sfill
- - go test github.com/vorsprung/sfill
+ - go test github.com/vorsprung/parameter-ssm-template/sfill
