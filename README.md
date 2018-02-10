@@ -47,6 +47,9 @@ To compile a static binary, I used this command line for the template program
 change into the src/sfill directory and issue this command
     `go get ./...`
 
+If an AWS config file is not present then the AWS functional unit tests will
+not run
+
 ## How to restrict access to a particular key set 
 The policy below can be attached to a user or role to allow access all
 the keys under a /test tree.  Replace the account id with your account id
