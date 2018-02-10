@@ -3,4 +3,4 @@ language: go
 go:
     - 1.9
 script:
- - go test github.com/vorsprung/parameter-ssm-template/sfill
+ - make test

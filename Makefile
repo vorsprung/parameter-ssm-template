@@ -27,6 +27,5 @@ $(PLATFORMS):
 	GOOS=$(os) GOARCH=amd64 go build ${LDFLAGS} -o $(BIN_DIR)/$(BINARY)-$(VERSION)-$(os)-amd64
 
 test:
-	go get ./...
-	go test github.com/vorsprung/sfill
+	go test github.com/vorsprung/parameter-ssm-template/sfill
 
