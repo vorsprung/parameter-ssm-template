@@ -1,9 +1,16 @@
 package sfill
 
-import "testing"
+import (
+	"os"
+	"testing"
+)
 
 func TestGet(t *testing.T) {
 	testpath := "/global/example/aaa"
+	if !(awsConfig()) {
+		t.Skip("skipping test AWS not available")
+	}
+
 	me := Para{}
 	me.setup()
 	mymap := me.Getpath(testpath)
@@ -30,6 +37,9 @@ func TestCRUD(t *testing.T) {
 		"/global/example/zzz/chip sauce",
 		"/global/example/zzz/msg salt and vinegar"}
 
+	if !(awsConfig()) {
+		t.Skip("skipping test AWS not available")
+	}
 	base := "/testing"
 	me := Para{}
 	me.setup()
@@ -62,4 +72,11 @@ func TestCRUD(t *testing.T) {
 		t.Error("old narwal found ", mymap2)
 	}
 
+}
+
+func awsConfig() bool {
+	if _, err := os.Stat(os.Getenv("HOME") + "/.aws/config"); os.IsNotExist(err) {
+		return false
+	}
+	return true
 }

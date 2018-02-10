@@ -1,7 +1,8 @@
 SSM Parameter Store legacy
 --------------------------
 
-This go program and scripts allow the management of variables in config files, programs etc from the AWS SSM Parameter Store
+This go program and scripts allow the management of variables in config
+files, programs etc from the AWS SSM Parameter Store
 
 ## Why use the Parameter store?
 
