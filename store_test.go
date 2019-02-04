@@ -27,7 +27,7 @@ func TestReadFile(t *testing.T) {
 	testpath := "_kvtestdata.txt"
 	strs := Readflatfile(testpath)
 	if len(strs) != 5 {
-		t.Errorf("wrong number of values found, expected 5, was %d", len(strs))
+		t.Errorf("wrong number of values found, wanted 5, was %d", len(strs))
 	}
 
 }
